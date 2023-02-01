@@ -128,7 +128,6 @@
       ------ Joining multiple tables -------
       
       USE sql_store;
-        
         SELECT
             O.order_id,
             O.order_date,
@@ -138,3 +137,11 @@
         FROM orders O
         JOIN customers C
         ON O.customer_id = C.customer_id
+
+
+     USE Sql_invoicing;
+     SELECT * FROM payments p 
+     JOIN clients c 
+      ON p.client_id = c.client_id
+     JOIN payment_methods pm
+      ON p.payment_method = pm.payment_method_id
